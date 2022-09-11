@@ -1,0 +1,29 @@
+From 546d33a9686042548585bbba98bf365b010c414f Mon Sep 17 00:00:00 2001
+From: ckie <git-525ff67@ckie.dev>
+Date: Sun, 11 Sep 2022 15:34:57 +0300
+Subject: [PATCH] nix-doom-emacs(cli): don't pollute build env with quickstart
+
+~ = /homeless-shelter
+---
+ lisp/cli/install.el | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/lisp/cli/install.el b/lisp/cli/install.el
+index a58a9c036..99c08df80 100644
+--- a/lisp/cli/install.el
++++ b/lisp/cli/install.el
+@@ -123,10 +123,7 @@ Change `$DOOMDIR' with the `--doomdir' option, e.g.
+     (when (file-exists-p "~/.emacs")
+       (print! (warn "A ~/.emacs file was detected. This conflicts with Doom and should be deleted!")))
+ 
+-    (print! (success "\nFinished! Doom is ready to go!\n"))
+-    (with-temp-buffer
+-      (insert-file-contents (doom-path doom-emacs-dir "templates/QUICKSTART_INTRO"))
+-      (print! "%s" (buffer-string)))))
++    (print! (success "\nFinished! Doom is ready to go!\n"))))
+ 
+ (provide 'doom-cli-install)
+ ;;; install.el ends here
+-- 
+2.37.1
+
