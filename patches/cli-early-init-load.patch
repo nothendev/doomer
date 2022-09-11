@@ -1,0 +1,29 @@
+From 1a2407483dcf196f4bdd8ea4f24721c249878f25 Mon Sep 17 00:00:00 2001
+From: ckie <git-525ff67@ckie.dev>
+Date: Sun, 11 Sep 2022 14:41:48 +0300
+Subject: [PATCH] nix-doom-emacs(cli): don't load early-init automatically
+
+---
+ bin/doom | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/bin/doom b/bin/doom
+index e8a77f66b..0fecba97c 100755
+--- a/bin/doom
++++ b/bin/doom
+@@ -78,9 +78,9 @@
+ ;; universal defaults, and autoloads for doom-*-initialize functions.
+ (condition-case e
+     (let ((load-prefer-newer t))
+-      (load (expand-file-name
+-             "../early-init" (file-name-directory (file-truename load-file-name)))
+-            nil 'nomessage))
++      (load "@out@/early-init.el" nil 'nomessage)
++      (load "@out@/lisp/doom.el" nil 'nomessage)
++      (load "@out@/lisp/doom-cli.el" nil 'nomessage))
+   ;; Prevent ugly backtraces for trivial errors
+   (user-error (message "Error: %s" (cadr e))
+               (kill-emacs 2)))
+-- 
+2.37.1
+

@@ -88,10 +88,12 @@ let
     phases = [ "unpackPhase" "patchPhase" "installPhase" ];
     patches = [
       ./patches/fix-paths.patch
+      ./patches/cli-early-init-load.patch
     ];
     installPhase = ''
       mkdir -p $out
       cp -r * $out
+      substituteAllInPlace $out/bin/doom
     '';
   };
 
