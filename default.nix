@@ -89,6 +89,7 @@ let
     patches = [
       ./patches/fix-paths.patch
       ./patches/cli-early-init-load.patch
+      ./patches/cli-no-quickstart.patch
     ];
     installPhase = ''
       mkdir -p $out
@@ -117,7 +118,7 @@ let
         emacsPackages.overrideScope' overrides;
       emacs = emacsPackages.emacsWithPackages extraPackages;
       emacsLoadFiles = [ ./advice.el ];
-      emacsArgs = [ "--" "install" ];
+      emacsArgs = [ "--" "install" "--no-hooks" ];
 
       # Need to reference a store path here, as byte-compilation will bake-in
       # absolute path to source files.

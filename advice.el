@@ -41,7 +41,10 @@
 (advice-add '+org-fix-package-h
             :override (lambda (&rest r)))
 
-;; don't try adding the git hooks
+;; don't try adding the git hooks for old dooms. this function is
+;; undefined in newer dooms and a CLI argument is used instead.
+;;
+;; kept around for backwards-compat, but this is not a priority.
 (advice-add 'doom-cli--ci-deploy-hooks
             :override (lambda (&rest r)))
 
