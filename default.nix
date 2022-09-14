@@ -153,14 +153,15 @@ let
       export HOME=$(mktemp -d)
     '';
     postInstall = ''
-      # If gccEmacs or anything would write in $HOME, fail the build.
+      # If gccEmacs or anything would write in $HOME, warn since this is sketchy.
       if [[ -z "$(find $HOME -maxdepth 0 -empty)" ]]; then
-        printf "${fmt.red}${fmt.bold}ERROR:${fmt.reset} "
+        printf "\n\n\n"
+        printf "${fmt.red}${fmt.bold}WARNING:${fmt.reset} "
         printf "${fmt.red}doom-emacs build resulted in files being written in "'$HOME'" of the build sandbox.\n"
         printf "Contents of "'$HOME'":\n"
         find $HOME
         printf ${fmt.reset}
-        exit 33
+        printf "\n\n\n"
       fi
     '';
   });
