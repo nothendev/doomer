@@ -263,11 +263,11 @@
     "org": {
       "flake": false,
       "locked": {
-        "lastModified": 1683136293,
-        "narHash": "sha256-PMHNr3Qo62uqO5IUDAfxUoqa4Zvb9y2J76pRYDB/6Y4=",
+        "lastModified": 1683799647,
+        "narHash": "sha256-MbzyCPesaIBnEeziLd4MU8I7GFiz+Fd3w8UeVRvs1dg=",
         "owner": "emacs-straight",
         "repo": "org-mode",
-        "rev": "080710797ad25e76c4556d2b03cc0aa5313cd187",
+        "rev": "30b790f42bd0de95ca15d927e27b9125b6549043",
         "type": "github"
       },
       "original": {
