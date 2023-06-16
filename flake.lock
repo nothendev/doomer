@@ -66,6 +66,22 @@
         "type": "github"
       }
     },
+    "evil-collection": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1686801899,
+        "narHash": "sha256-wGJWF9t8yaxLyYQRf3hK+5/AIYYAS8qWXPDEvatzBlc=",
+        "owner": "emacs-evil",
+        "repo": "evil-collection",
+        "rev": "4a7d924dbd851ef1b2ccb85778be6e7a6a81ebd4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "emacs-evil",
+        "repo": "evil-collection",
+        "type": "github"
+      }
+    },
     "evil-escape": {
       "flake": false,
       "locked": {
@@ -279,11 +295,11 @@
     "org-contrib": {
       "flake": false,
       "locked": {
-        "lastModified": 1675694242,
-        "narHash": "sha256-4Fn33CTVTCqh5TyVAggSr8Fm8/hB8Xgl+hkxh3WCrI8=",
+        "lastModified": 1686481149,
+        "narHash": "sha256-R9kCbkq7lBEY/m6HMc07Wo0gfUR9q9Rij1fw9kpoKA4=",
         "owner": "emacsmirror",
         "repo": "org-contrib",
-        "rev": "fff6c888065588527b1c1d7dd7e41c29ef767e17",
+        "rev": "4ac1a280c740df121bcefb2ec99ddba945e857d3",
         "type": "github"
       },
       "original": {
@@ -346,6 +362,7 @@
         "doom-snippets": "doom-snippets",
         "emacs-overlay": "emacs-overlay",
         "emacs-so-long": "emacs-so-long",
+        "evil-collection": "evil-collection",
         "evil-escape": "evil-escape",
         "evil-markdown": "evil-markdown",
         "evil-org-mode": "evil-org-mode",
